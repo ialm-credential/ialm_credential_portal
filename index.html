@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IALM · Credential Verification</title>
+  <meta name="description" content="A fictional IALM credential verification page created as a personal gift.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="top-nav" aria-label="Page navigation">
+    <span id="navCurrent">Home Page</span>
+    <button id="navHome" type="button" hidden>Home</button>
+    <button id="navRecent" type="button" disabled>Recently Visited</button>
+  </nav>
+
+  <main class="shell">
+    <header class="brand">
+      <button id="homeLogo" class="logo-mark" type="button" aria-label="Return to credential lookup">
+        <img src="ud.png" alt="IALM">
+      </button>
+      <div>
+        <div class="org">INTERNATIONAL ASSOCIATION<br>OF LOVE MEDICINE</div>
+        <div class="sub">CREDENTIAL VERIFICATION PORTAL</div>
+      </div>
+    </header>
+
+    <section id="lookup" class="screen active">
+      <p class="eyebrow">SECURE CREDENTIAL CHECK</p>
+      <h1>CREDENTIAL<br>VERIFICATION</h1>
+      <p class="muted">Enter an IALM credential number to view the credential record.</p>
+
+      <form id="credentialForm" class="lookup-form">
+        <label for="credentialInput">CREDENTIAL NUMBER</label>
+        <div class="lookup-row">
+          <input id="credentialInput" name="credential" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" placeholder="ENTER NUMBER" required>
+          <button type="submit">VERIFY</button>
+        </div>
+        <p id="lookupHint" class="form-hint">Format: IALM/XXXXXX</p>
+      </form>
+    </section>
+
+    <section id="checking" class="screen" hidden>
+      <div class="loader-ring"></div>
+      <p class="eyebrow">SECURE CREDENTIAL CHECK</p>
+      <h1>VERIFYING<br>CREDENTIAL<span class="dots">...</span></h1>
+      <div class="progress"><span></span></div>
+      <p class="muted">Checking submitted accreditation number</p>
+    </section>
+
+    <section id="notFound" class="screen not-found-screen" hidden>
+      <div class="not-found-mark">!</div>
+      <p class="eyebrow">CREDENTIAL STATUS</p>
+      <h1>NO RECORD<br>FOUND</h1>
+      <p class="muted">The submitted accreditation number does not match an IALM credential record.</p>
+      <p class="submitted-number" id="submittedNumber"></p>
+      <button id="tryAgainBtn" class="secondary-btn" type="button">TRY AGAIN</button>
+    </section>
+
+    <section id="result" class="screen" hidden>
+      <div class="verified">
+        <span class="check" aria-hidden="true"></span>
+        <div>
+          <div class="eyebrow">CREDENTIAL STATUS</div>
+          <strong>VERIFIED</strong>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="portrait-placeholder">
+          <img src="pol.png" alt="Polina Savkova">
+        </div>
+        <div>
+          <p class="eyebrow">PROFESSIONAL CREDENTIAL</p>
+          <h1 data-credential="name">POLINA SAVKOVA</h1>
+          <p class="credential" data-credential="number">IALM/PS21368</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <span class="label">STATUS</span>
+          <span class="value active">● <span data-credential="status">ACTIVE</span></span>
+        </div>
+        <div class="card">
+          <span class="label">VALIDITY</span>
+          <span class="value" data-credential="validity">INDEFINITE</span>
+        </div>
+        <div class="card wide">
+          <span class="label">FIELD OF PRACTICE</span>
+          <span class="value" data-credential="field">Relationship &amp; Emotional Wellbeing</span>
+        </div>
+        <div class="card wide">
+          <span class="label">ISSUED BY</span>
+          <span class="value" data-credential="issuedBy">IALM Credentialing Office · Bern, CH</span>
+        </div>
+        <div class="card">
+          <span class="label">ISSUED</span>
+          <span class="value technical" data-credential="issued">22.10.2023</span>
+        </div>
+      </div>
+
+      <button id="profileBtn" class="profile-btn" type="button">
+        VIEW PROFESSIONAL PROFILE
+        <span>＋</span>
+      </button>
+
+      <div id="profileDetails" class="details">
+        <div class="details-head">
+          <span>IALM CLASSIFICATION SYSTEM</span>
+          <span>3.4</span>
+        </div>
+        <div class="classification">
+          <div><b>3.4</b><span>Relationship Medicine</span></div>
+          <div><b>3.4.1</b><span>Emotional Support</span></div>
+          <div><b>3.4.2</b><span>Positive Mood Maintenance</span></div>
+          <div><b>3.4.3</b><span>Affection &amp; Care</span></div>
+          <div><b>3.4.4</b><span>Relationship Wellbeing</span></div>
+          <div><b>3.4.5</b><span>Stress Relief Through Affection</span></div>
+        </div>
+
+        <div class="statement">
+          <span class="label">PROFESSIONAL STATEMENT</span>
+          <p>Recognized for an exceptional ability to improve mood, provide emotional support and maintain optimal levels of happiness.</p>
+        </div>
+
+        <div class="about">
+          <span class="label">ABOUT IALM</span>
+          <p>The International Association of Love Medicine promotes the science and practice of love, emotional support and human connection as essential components of a healthy and fulfilling life.</p>
+        </div>
+
+        <div class="note">
+          <span>IALM RECORD</span>
+          <p>This credential recognizes care, affection and emotional wellbeing within the fictional IALM framework.</p>
+        </div>
+      </div>
+
+      <div class="verification-panel" aria-label="Credential verification reference">
+        <div>
+          <span class="label">CREDENTIAL NO.</span>
+          <strong data-credential="number">IALM/PS21368</strong>
+          <p>Static verification page reference · no identity database is queried.</p>
+        </div>
+        <div id="qrCode" class="qr" aria-label="QR code linking to this credential record">
+          <span>QR</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>IALM · BERN · CH</span>
+    <span>NO PAYMENT INFO REQUIRED</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
