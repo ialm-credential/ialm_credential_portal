@@ -747,7 +747,7 @@ body[data-page="letter"] .top-nav button:before {
   }
 
   .letter-article {
-    font-size: 20px;
+    font-size: 16px;
     padding: 22px 8px 18px;
   }
 
@@ -831,23 +831,24 @@ body[data-page="letter"] .top-nav button:before {
   }
 
   body[data-page="letter"] .letter-panel {
-    min-height: 0;
+    min-height: calc(100vh - 190px);
   }
 
   body[data-page="letter"] .language-modal {
-    padding: 28px 0;
-    align-items: flex-start;
-  } 
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
 
   body[data-page="letter"] .language-modal-inner {
-    width: calc(100% - 40px);
+    width: calc(100% - 32px);
     max-width: 600px;
-    margin: 24px auto 0;
-  }
+    margin: 0 auto;
+  } 
 
   body[data-page="letter"] .language-select-panel {
     width: 100%;
-    padding: 28px 18px 24px;
+    padding: 24px 16px 20px;
     box-sizing: border-box;
   }
 
@@ -886,10 +887,13 @@ body[data-page="letter"] .top-nav button:before {
   }
 
   body[data-page="letter"] .letter-footer-bar {
-    padding: 18px 14px;
+    padding: 18px 14px 24px;
+    min-height: 82px;
+    align-items: center;
   }
 
   body[data-page="letter"] .home-letter-btn {
     width: min(100%, 260px);
+    min-height: 44px;
   }
 }
