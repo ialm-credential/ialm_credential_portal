@@ -702,11 +702,10 @@ body[data-page="letter"] .top-nav button:before {
 
 @media (max-width: 900px) {
   .letter-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
-
   .letter-branding {
     text-align: center;
   }
@@ -788,24 +787,29 @@ body[data-page="letter"] .top-nav button:before {
   }
 
   body[data-page="letter"] .letter-logo {
-    width: 82px;
-    flex: 0 0 82px;
+    width: 92px;
+    min-width: 92px;
+    flex: 0 0 92px;
+    padding-right: 14px;
   }
 
   body[data-page="letter"] .letter-logo img {
-    width: 100%;
+    width: 76px;
+    max-width: 100%;
     height: auto;
     display: block;
-  }
+  } 
 
   body[data-page="letter"] .letter-branding {
-    min-width: 0;
+  min-width: 0;
+  flex: 1 1 auto;
+  text-align: left;
   }
 
   body[data-page="letter"] .letter-org {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.08;
-    letter-spacing: .2px;
+    letter-spacing: .15px;
     font-weight: 500;
   }
 
@@ -826,9 +830,10 @@ body[data-page="letter"] .top-nav button:before {
 
   body[data-page="letter"] .letter-registry-tag {
     right: 18px;
-    bottom: 14px;
-    font-size: 7px;
-    letter-spacing: 1.2px;
+    bottom: 10px;
+    font-size: 6.5px;
+    letter-spacing: 1.4px;
+    opacity: .75;
   }
 
   body[data-page="letter"] .letter-panel {
