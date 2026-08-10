@@ -133,10 +133,12 @@ function initLetterPage() {
     modal.classList.add("is-loading");
     article.classList.remove("is-visible");
 
+    const loadingTime = Math.floor(Math.random() * 2001) + 1000;
+
     setTimeout(() => {
       modal.classList.remove("is-visible", "is-loading");
       renderLetter(lang);
-    }, 1800);
+    }, loadingTime);
   };
 
   requestAnimationFrame(() => modal.classList.add("is-visible"));
