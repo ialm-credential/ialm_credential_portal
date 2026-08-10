@@ -751,14 +751,8 @@ body[data-page="letter"] .top-nav button:before {
     padding: 22px 8px 18px;
   }
 
-  .lang-selector-stack {
-    gap: 12px;
-  }
-
-  .lang-tile {
+    .lang-tile {
     min-height: 66px;
-    font-size: clamp(28px, 9vw, 42px);
-    border-radius: 14px;
   }
 }
 
@@ -841,13 +835,13 @@ body[data-page="letter"] .top-nav button:before {
   }
 
   body[data-page="letter"] .language-modal {
-    padding: 28px 14px;
+    padding: 28px 0;
     align-items: flex-start;
-  }
+  } 
 
   body[data-page="letter"] .language-modal-inner {
-    width: 100%;
-    max-width: 420px;
+    width: calc(100% - 40px);
+    max-width: 600px;
     margin: 24px auto 0;
   }
 
@@ -873,7 +867,8 @@ body[data-page="letter"] .top-nav button:before {
     min-height: 62px;
     padding: 0 16px;
     gap: 14px;
-  }
+    border-radius: 0;
+  } 
 
   body[data-page="letter"] .lang-code {
     width: 36px;
